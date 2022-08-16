@@ -1,0 +1,12 @@
+server:
+  port: 84
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7123.com:7123/eureka/
+
+feign:
+  hystrix:
+    enabled: true

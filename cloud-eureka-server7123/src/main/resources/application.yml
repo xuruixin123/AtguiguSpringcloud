@@ -1,0 +1,14 @@
+server:
+  port: 7123
+
+eureka:
+  instance:
+    hostname: eureka7123.com #eureka服务端的实例名称
+  client:
+    register-with-eureka: false #false表示不向注册中心注册自己
+    fetch-registry: false
+    service-url:
+      #集群指向其它eureka
+      #defaultZone: http://eureka7234.com:7234/eureka/
+      #单机就是7123自己
+      defaultZone: http://eureka7123.com:7123/eureka/

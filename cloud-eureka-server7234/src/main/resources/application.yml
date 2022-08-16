@@ -1,0 +1,11 @@
+server:
+  port: 7234
+
+eureka:
+  instance:
+    hostname: eureka7234.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7123.com:7123/eureka/

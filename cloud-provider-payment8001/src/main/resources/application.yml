@@ -1,0 +1,31 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
+#    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包，笔记上的和我的不太一样
+    url: jdbc:mysql://localhost:3306/atguiguspringcloud?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false # 要改改
+    username: root   # 要改改
+    password: hitxrx123   # 要改改
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+#      defaultZone: http://localhost:7123/eureka
+      defaultZone: http://eureka7234.com:7234/eureka, http://eureka7123.com:7123/eureka
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包 # 要改改
