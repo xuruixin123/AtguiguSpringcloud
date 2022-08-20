@@ -7,13 +7,15 @@ spring:
   cloud:
     #Config客户端配置
     config:
-      label: master #分支名称       改一改
+      label: main #分支名称       改一改
       name: config #配置文件名称     改一改
-      profile: dev #读取后缀名称     改一改    上述3个综合：master分支上config-dev.yml的配置文件被读取http://config-3344.com:3344/master/config-dev.yml
-      uri: http://localhost:3344 #配置中心地址k
-#rabbitmq相关配置
+      profile: dev #读取后缀名称     改一改    上述3个综合：main分支上config-dev.yml的配置文件被读取http://config-3344.com:3344/main/config-dev.yml
+      uri: http://localhost:3344 #配置中心地址
+      skip-ssl-validation: true    # 忽略ssl校验
+
+        #      rabbitmq相关配置
   rabbitmq:
-    host: localhost
+    host: 192.168.6.100
     port: 5672
     username: admin
     password: 123
@@ -25,7 +27,7 @@ eureka:
       defaultZone: http://localhost:7123/eureka
 
 
-# 暴露监控端点
+#暴露监控端点
 management:
   endpoints:
     web:

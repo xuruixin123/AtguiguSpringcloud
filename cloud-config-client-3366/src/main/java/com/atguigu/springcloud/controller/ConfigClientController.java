@@ -12,7 +12,7 @@ public class ConfigClientController {
     @Value("${server.port}")
     private String serverPort;
 
-    @Value("${config.info}") //此处我们没有用 github，所以可能要修改
+    @Value("${config.info}")
     private String configInfo;
 
     @GetMapping("/configInfo")

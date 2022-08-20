@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name:  cloud-config-center
+    name: cloud-config-center
   cloud:
     config:
       server:
@@ -11,8 +11,14 @@ spring:
           uri: https://github.com/xuruixin123/springcloud-config.git
           search-paths:
             - springcloud-config
-          skip-ssl-validation: true
+          skip-ssl-validation: true    # 忽略ssl校验
       label: main
+      #      rabbitmq相关配置
+  rabbitmq:
+    host: 192.168.6.100  #我这里用的是虚拟机，所以主机名不是localhost
+    port: 5672
+    username: admin
+    password: 123
 
 
 eureka:
@@ -20,4 +26,11 @@ eureka:
     service-url:
       defaultZone: http://localhost:7123/eureka
 
+
+#rabbitmq相关配置,暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
 
