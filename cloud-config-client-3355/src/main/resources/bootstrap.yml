@@ -9,9 +9,8 @@ spring:
     config:
       label: main #分支名称       改一改
       name: config #配置文件名称     改一改
-      profile: dev #读取后缀名称     改一改    上述3个综合：main分支上config-dev.yml的配置文件被读取http://config-3344.com:3344/main/config-dev.yml
+      profile: dev #读取后缀名称     改一改
       uri: http://localhost:3344 #配置中心地址
-      skip-ssl-validation: true    # 忽略ssl校验
 
         #      rabbitmq相关配置
   rabbitmq:
